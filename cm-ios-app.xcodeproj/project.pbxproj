@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6746D0B32F3081B400011295 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 6746D0B22F3081AF00011295 /* codemagic.yaml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6746D0962F3080E000011295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		6746D0852F3080DD00011295 /* cm-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cm-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6746D0952F3080E000011295 /* cm-ios-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cm-ios-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6746D09F2F3080E000011295 /* cm-ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cm-ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6746D0B22F3081AF00011295 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				6746D0982F3080E000011295 /* cm-ios-appTests */,
 				6746D0A22F3080E000011295 /* cm-ios-appUITests */,
 				6746D0862F3080DD00011295 /* Products */,
+				6746D0B22F3081AF00011295 /* codemagic.yaml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6746D0B32F3081B400011295 /* codemagic.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cm.cm-ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "cm.cm-ios-app.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -438,7 +445,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cm.cm-ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "cm.cm-ios-app.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

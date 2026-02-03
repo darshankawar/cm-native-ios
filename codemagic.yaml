@@ -1,0 +1,34 @@
+workflows:
+    sample-workflow:
+        name: Codemagic Sample Workflow
+        max_build_duration: 120
+        instance_type: mac_mini_m2
+        integrations:
+          app_store_connect: Codemagic 
+        environment:
+          vars:
+            BUNDLE_ID: "cm.cm-ios-app.ios"
+            XCODE_WORKSPACE: "project.xcworkspace"
+          ios_signing:
+            distribution_type: app_store
+            bundle_identifier: cm.cm-ios-app.ios  
+          groups:
+             - firebase_credentials
+        scripts:
+          - name: Set up provisioning profiles settings on Xcode project
+            script: xcode-project use-profiles      
+          - name: Build ipa
+            script: |
+              xcode-project build-ipa \
+                --workspace "$CM_BUILD_DIR/cm-ios-app.xcodeproj/$XCODE_WORKSPACE"
+        artifacts:
+          - build/ios/ipa/*.ipa
+          - /tmp/xcodebuild_logs/*.log
+        publishing:
+          email:
+            recipients:
+              - darshan@nevercode.io
+            notify:
+              success: true
+              failure: true
+
