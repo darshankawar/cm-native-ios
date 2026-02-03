@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6746D0B32F3081B400011295 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 6746D0B22F3081AF00011295 /* codemagic.yaml */; };
+		6754830F2F3227CD00FDDF78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6754830E2F3227CD00FDDF78 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		6746D0952F3080E000011295 /* cm-ios-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cm-ios-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6746D09F2F3080E000011295 /* cm-ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cm-ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6746D0B22F3081AF00011295 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		6754830E2F3227CD00FDDF78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +82,7 @@
 		6746D07C2F3080DD00011295 = {
 			isa = PBXGroup;
 			children = (
+				6754830E2F3227CD00FDDF78 /* GoogleService-Info.plist */,
 				6746D0872F3080DD00011295 /* cm-ios-app */,
 				6746D0982F3080E000011295 /* cm-ios-appTests */,
 				6746D0A22F3080E000011295 /* cm-ios-appUITests */,
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6754830F2F3227CD00FDDF78 /* GoogleService-Info.plist in Resources */,
 				6746D0B32F3081B400011295 /* codemagic.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

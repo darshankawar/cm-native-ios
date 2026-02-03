@@ -9,22 +9,30 @@ workflows:
           vars:
             BUNDLE_ID: "cm.cm-ios-app.ios"
             XCODE_WORKSPACE: "project.xcworkspace"
+            XCODE_SCHEME: "cm-ios-app-scheme"
           ios_signing:
             distribution_type: app_store
             bundle_identifier: cm.cm-ios-app.ios  
           groups:
-             - firebase_credentials
+             - irebase_credentials
         scripts:
           - name: Set up provisioning profiles settings on Xcode project
             script: xcode-project use-profiles      
           - name: Build ipa
             script: |
               xcode-project build-ipa \
-                --workspace "$CM_BUILD_DIR/cm-ios-app.xcodeproj/$XCODE_WORKSPACE"
+                --workspace "$CM_BUILD_DIR/cm-ios-app.xcodeproj/$XCODE_WORKSPACE" \
+                --scheme "$XCODE_SCHEME"
         artifacts:
           - build/ios/ipa/*.ipa
           - /tmp/xcodebuild_logs/*.log
         publishing:
+          firebase:
+            firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+            ios:
+              app_id: 1:562397278889:ios:b23362f595fe10c766afb8
+              groups:
+                - cm-test-group
           email:
             recipients:
               - darshan@nevercode.io

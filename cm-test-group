@@ -1,0 +1,67 @@
+cm-test-group
+
+
+YOUR_PROJECT.xcodeproj/xcshareddata/xcschemes/YOUR_SCHEMES.
+
+git remote add origin https://github.com/darshankawar/cm-native-ios.git
+git remote -v
+git push -u origin main
+
+
+cm-ios-app-scheme
+
+
+curl https://api.codemagic.io/ssh-access/eyJidWlsZF9pZCI6IjY5ODFkYjgzNzg0ZWJiZmNiYzJjYTgzMSJ9.W9CzmRyDcLg3t1LbH6yd_QQE07U/ssh_access_script.sh | bash.
+
+cm-ios-app.xcodeproj/project.xcworkspace
+
+xcode-project build-ipa: error: argument --workspace: Path "/Users/builder/clone/project.xcworkspace" does not exist
+
+xcode-project build-ipa: error: argument --workspace: Path "/Users/builder/clone/project.xcworkspace" does not exist
+
+"$CM_BUILD_DIR/cm-ios-app.xcodeproj/$XCODE_WORKSPACE"
+
+under teams -> code signing identities -> ios certificates -> upload or generate certificate
+and for provisioning, under `ios provisioning profiles` tab -> upload provisioning profile.
+
+
+cm.cm-ios-app.ios
+
+provisioning profile name: app_store
+
+
+error:
+
+scripts:
+  - &codesign #Reuse codesigning script
+    name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
+    script: keychain initialize
+    name: Fetch signing files
+    script: |
+      # You can allow creating resources if existing are not found with `--create` flag
+      app-store-connect fetch-signing-files "com.onsitemanagementapp.oma" \
+        --type IOS_APP_STORE \
+        --create
+  - name: Set up signing certificate
+    script: keychain add-certificates
+  - name: Set up code signing settings on Xcode project
+    script: xcode-project use-profiles
+
+
+
+ fixed:
+ 
+ scripts:
+  - &codesign #Reuse codesigning script
+    name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
+    script: keychain initialize
+    name: Fetch signing files
+    script: |
+      # You can allow creating resources if existing are not found with `--create` flag
+      app-store-connect fetch-signing-files "com.onsitemanagementapp.oma" \
+        --type IOS_APP_STORE \
+        --create
+    name: Set up signing certificate
+    script: keychain add-certificates
+    name: Set up code signing settings on Xcode project
+    script: xcode-project use-profiles   
