@@ -1,6 +1,6 @@
 workflows:
     sample-workflow:
-        name: Codemagic Sample Workflow
+        name: ios native workflow
         max_build_duration: 120
         instance_type: mac_mini_m2
         integrations:
@@ -39,5 +39,5 @@ workflows:
               - nihal@nevercode.io
             notify:
               success: true
-              failure: true
+              failure: false
 
