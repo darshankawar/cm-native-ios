@@ -36,6 +36,7 @@ workflows:
           email:
             recipients:
               - darshan@nevercode.io
+              - nihal@nevercode.io
             notify:
               success: true
               failure: true
